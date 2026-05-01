@@ -620,31 +620,59 @@
           </div>
         </div>
       </div>
-      <div class="contact-form">
-        <h3>Send an Enquiry</h3>
-        <div class="form-row">
-          <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
-          <div class="form-group"><label>Company</label><input type="text" placeholder="Company name"/></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
-          <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
-        </div>
-        <div class="form-group">
-          <label>Product Interest</label>
-          <select>
-            <option value="">Select a product…</option>
-            <option>HIPS ESD Safe Tray</option>
-            <option>PP Anti-Static / ESD Tray</option>
-            <option>PVC Tray / ESD Tray</option>
-            <option>Thermoformed PVC Tray</option>
-            <option>PET Tray</option>
-            <option>Custom / OEM Requirement</option>
-          </select>
-        </div>
-        <div class="form-group"><label>Message</label><textarea placeholder="Describe your requirements — material, size, quantity, application…"></textarea></div>
-        <button class="submit-btn" onclick="alert('Thank you for your enquiry! We will contact you shortly.')">Send Enquiry →</button>
-      </div>
+    <form id="contactForm" class="contact-form">
+
+  <input type="hidden" name="access_key" value="Access_key_here">
+
+  <h3>Send an Enquiry</h3>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" name="name" placeholder="Full name" required>
+    </div>
+
+    <div class="form-group">
+      <label>Company</label>
+      <input type="text" name="company" placeholder="Company name">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX">
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="your@email.com" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Product Interest</label>
+    <select name="product">
+      <option value="">Select a product…</option>
+      <option>HIPS ESD Safe Tray</option>
+      <option>PP Anti-Static / ESD Tray</option>
+      <option>PVC Tray / ESD Tray</option>
+      <option>Thermoformed PVC Tray</option>
+      <option>PET Tray</option>
+      <option>Custom / OEM Requirement</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" required></textarea>
+  </div>
+
+  <!-- success / error message -->
+  <p id="formMessage" style="margin-top:10px;font-size:0.9rem;"></p>
+
+  <button type="submit" class="submit-btn">Send Enquiry →</button>
+</form> 
     </div>
   </div>
 </section>
@@ -669,5 +697,40 @@
   </a>
 </div>
 
+<script>
+const form = document.getElementById("contactForm");
+const messageBox = document.getElementById("formMessage");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  messageBox.style.color = "#7ab6f5";
+  messageBox.textContent = "Sending...";
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      messageBox.style.color = "#4ade80";
+      messageBox.textContent = "✅ Enquiry sent successfully!";
+      form.reset();
+    } else {
+      messageBox.style.color = "#f87171";
+      messageBox.textContent = "❌ Something went wrong. Try again.";
+    }
+
+  } catch (error) {
+    messageBox.style.color = "#f87171";
+    messageBox.textContent = "❌ Network error. Please try again.";
+  }
+});
+</script>
 </body>
 </html>
