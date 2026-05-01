@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Super Form Pack – ESD Safe Tray Manufacturer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --blue: #1a4fa0;
+      --accent: #2f80ed;
+      --silver: #c8d6e8;
+      --light: #e8f0fb;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Barlow', sans-serif; background: #f4f7fb; color: var(--navy); scroll-behavior: smooth; }
+    h1,h2,h3,h4,nav { font-family: 'Rajdhani', sans-serif; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(13,31,60,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(47,128,237,0.2); }
+    .nav-inner { max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { height: 44px; }
+    .nav-logo span { color: #fff; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.03em; line-height: 1.1; }
+    .nav-logo span small { display: block; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.15em; color: var(--silver); text-transform: uppercase; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: var(--silver); font-size: 0.95rem; font-weight: 600; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: var(--accent); color: #fff; padding: 8px 20px; border-radius: 4px; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: #1a6de0; }
+
+    /* HERO */
+    .hero { min-height: 100vh; background: linear-gradient(135deg, #071428 0%, #0d2248 55%, #0f2f6e 100%); display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 80px; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(47,128,237,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(47,128,237,0.08) 1px, transparent 1px); background-size: 48px 48px; }
+    .hero-glow { position: absolute; top: 20%; right: 10%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(47,128,237,0.18) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+    .hero-inner { max-width: 1200px; margin: auto; padding: 60px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(47,128,237,0.15); border: 1px solid rgba(47,128,237,0.4); color: #7ab6f5; padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero-badge span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; display: inline-block; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: 0.01em; margin-bottom: 18px; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p { color: var(--silver); font-size: 1.05rem; font-weight: 300; line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: #fff; padding: 13px 28px; border-radius: 5px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-primary:hover { background: #1a6de0; transform: translateY(-1px); }
+    .btn-secondary { border: 1.5px solid rgba(200,214,232,0.4); color: var(--silver); padding: 13px 28px; border-radius: 5px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .btn-secondary:hover { border-color: var(--accent); color: #fff; }
+    .hero-visual { display: flex; flex-direction: column; gap: 14px; }
+    .hero-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px 22px; display: flex; align-items: center; gap: 16px; transition: border-color 0.2s; }
+    .hero-card:hover { border-color: rgba(47,128,237,0.4); }
+    .hero-card-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--accent), #0f2f6e); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem; }
+    .hero-card h4 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+    .hero-card p { color: var(--silver); font-size: 0.82rem; font-weight: 300; }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--navy); border-top: 1px solid rgba(47,128,237,0.2); border-bottom: 1px solid rgba(47,128,237,0.2); }
+    .trust-inner { max-width: 1200px; margin: auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-around; gap: 24px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 10px; color: var(--silver); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; }
+    .trust-item svg { color: var(--accent); flex-shrink: 0; }
+
+    /* SECTION BASE */
+    section { padding: 90px 24px; }
+    .section-inner { max-width: 1200px; margin: auto; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 14px; }
+    .section-sub { color: #5a6a80; font-size: 1rem; font-weight: 300; line-height: 1.7; max-width: 580px; }
+
+    /* ABOUT */
+    #about { background: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 50px; }
+    .about-text p { color: #4a5568; font-size: 0.98rem; line-height: 1.8; margin-bottom: 14px; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+    .stat-box { background: var(--light); border-left: 3px solid var(--accent); padding: 18px 20px; border-radius: 0 8px 8px 0; }
+    .stat-box .num { font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 700; color: var(--navy); }
+    .stat-box .lbl { font-size: 0.78rem; font-weight: 500; color: #5a6a80; letter-spacing: 0.05em; }
+    .about-features { display: flex; flex-direction: column; gap: 16px; }
+    .feat-row { display: flex; gap: 14px; align-items: flex-start; background: #f8faff; border: 1px solid #dde8f7; border-radius: 10px; padding: 18px 20px; }
+    .feat-icon { width: 38px; height: 38px; background: var(--navy); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
+    .feat-row h4 { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .feat-row p { font-size: 0.82rem; color: #5a6a80; line-height: 1.5; }
+
+    /* PRODUCTS */
+    #products { background: #f4f7fb; }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+    .prod-card { background: #fff; border: 1px solid #dde8f7; border-radius: 12px; overflow: hidden; transition: box-shadow 0.25s, transform 0.2s; }
+    .prod-card:hover { box-shadow: 0 12px 40px rgba(26,79,160,0.12); transform: translateY(-4px); }
+    .prod-img { height: 200px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .prod-img-hips { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+    .prod-img-pp { background: linear-gradient(135deg, #0f2027 0%, #203a43 100%); }
+    .prod-img-pvc { background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%); }
+    .prod-img-thermo { background: linear-gradient(135deg, #0d2248 0%, #1a4fa0 100%); }
+    .prod-img-pet { background: linear-gradient(135deg, #1b2838 0%, #2c5f8a 100%); }
+    .prod-img-custom { background: linear-gradient(135deg, #0f2027 0%, #1f5c5c 100%); }
+    .tray-visual { width: 140px; height: 90px; border-radius: 8px; position: relative; }
+    .tray-black { background: linear-gradient(160deg, #2a2a2a 0%, #111 100%); border: 1px solid #444; box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08); }
+    .tray-grid { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(3,1fr); gap: 3px; padding: 8px; height: 100%; }
+    .tray-cell { background: #1a1a1a; border-radius: 2px; border: 1px solid #333; }
+    .prod-badge { position: absolute; top: 12px; left: 12px; background: rgba(47,128,237,0.15); border: 1px solid rgba(47,128,237,0.4); color: #7ab6f5; padding: 3px 10px; border-radius: 50px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .prod-body { padding: 22px; }
+    .prod-body h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .prod-body p { font-size: 0.83rem; color: #5a6a80; line-height: 1.6; margin-bottom: 14px; }
+    .prod-specs { display: flex; flex-direction: column; gap: 6px; }
+    .spec-row { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 5px 0; border-bottom: 1px solid #f0f4fb; }
+    .spec-row .sk { color: #8896a7; font-weight: 500; }
+    .spec-row .sv { color: var(--navy); font-weight: 600; }
+
+    /* FACILITIES */
+    #facilities { background: var(--navy); }
+    #facilities .section-title { color: #fff; }
+    #facilities .section-label { color: #7ab6f5; }
+    #facilities .section-sub { color: var(--silver); }
+    .fac-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 50px; }
+    .fac-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 28px 24px; transition: border-color 0.2s, background 0.2s; }
+    .fac-card:hover { border-color: rgba(47,128,237,0.5); background: rgba(47,128,237,0.07); }
+    .fac-icon { font-size: 2rem; margin-bottom: 16px; }
+    .fac-card h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 10px; letter-spacing: 0.03em; }
+    .fac-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .fac-card ul li { color: var(--silver); font-size: 0.82rem; line-height: 1.5; display: flex; gap: 8px; align-items: flex-start; }
+    .fac-card ul li::before { content: '›'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* QUALITY */
+    #quality { background: #fff; }
+    .quality-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 50px; }
+    .quality-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .q-badge { background: var(--light); border: 1px solid #c8d6e8; border-radius: 12px; padding: 22px; text-align: center; }
+    .q-badge .qb-icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .q-badge h4 { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .q-badge p { font-size: 0.78rem; color: #5a6a80; }
+    .quality-points { display: flex; flex-direction: column; gap: 18px; }
+    .qp { display: flex; gap: 14px; align-items: flex-start; }
+    .qp-num { width: 32px; height: 32px; background: var(--navy); color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.88rem; flex-shrink: 0; }
+    .qp h4 { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .qp p { font-size: 0.83rem; color: #5a6a80; line-height: 1.6; }
+
+    /* CONTACT */
+    #contact { background: linear-gradient(135deg, #071428 0%, #0d2248 100%); }
+    #contact .section-title { color: #fff; }
+    #contact .section-label { color: #7ab6f5; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; }
+    .contact-info { display: flex; flex-direction: column; gap: 22px; }
+    .ci-card { display: flex; gap: 14px; align-items: flex-start; }
+    .ci-icon { width: 44px; height: 44px; background: rgba(47,128,237,0.15); border: 1px solid rgba(47,128,237,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .ci-card h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 700; color: #7ab6f5; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
+    .ci-card p, .ci-card a { color: var(--silver); font-size: 0.9rem; line-height: 1.6; text-decoration: none; display: block; }
+    .ci-card a:hover { color: #fff; }
+    .contact-form { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 30px; }
+    .contact-form h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--silver); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 11px 14px; color: #fff; font-size: 0.9rem; font-family: 'Barlow', sans-serif; outline: none; transition: border-color 0.2s; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(200,214,232,0.45); }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .submit-btn { width: 100%; background: var(--accent); color: #fff; border: none; padding: 14px; border-radius: 6px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; margin-top: 6px; }
+    .submit-btn:hover { background: #1a6de0; }
+
+    /* WHATSAPP FLOAT */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; }
+    .wa-btn { width: 56px; height: 56px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.2s; }
+    .wa-btn:hover { transform: scale(1.1); }
+    .wa-btn svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* FOOTER */
+    footer { background: #040d1a; border-top: 1px solid rgba(47,128,237,0.15); padding: 28px 24px; }
+    .footer-inner { max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-inner p { color: #5a6a80; font-size: 0.82rem; }
+    .footer-inner a { color: #5a6a80; font-size: 0.82rem; text-decoration: none; }
+    .footer-inner a:hover { color: var(--accent); }
+    .footer-links { display: flex; gap: 22px; }
+
+    @media(max-width: 900px) {
+      .hero-inner, .about-grid, .quality-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .fac-grid { grid-template-columns: 1fr 1fr; }
+      .hero-visual { display: none; }
+      .nav-links { display: none; }
+    }
+    @media(max-width: 600px) {
+      .products-grid, .fac-grid, .quality-badges { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <!-- SFP logo embedded as inline SVG approximation or use the uploaded image -->
+      <!-- <img src="/Users/ran/repos/sfpack/image.png" alt="SFP Logo"/> -->
+      <img src="./public/logo.png" alt="SFP Logo"/>
+      <span>Super Form Pack<small>A Group of Shine Cleaning Solutions</small></span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#quality">Quality</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span></span> ESD Safe Packaging Specialists</div>
+      <h1>Precision Trays for <em>Static-Sensitive</em> Electronics</h1>
+      <p>We manufacture high-performance ESD-safe blister trays for the electronics, semiconductor, automotive, and medical device industries. Durable. Customizable. Certified.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">Explore Products</a>
+        <a href="#contact" class="btn-secondary">Request a Quote</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon">⚡</div>
+        <div><h4>ESD Protection</h4><p>Surface resistance 10⁵–10⁹ Ω/sq, ANSI/ESD S20.20 compliant</p></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🏭</div>
+        <div><h4>Cleanroom Manufacturing</h4><p>ISO 14644 controlled environment with HEPA filtration</p></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🔧</div>
+        <div><h4>Fully Customizable</h4><p>Custom sizes, colors, partitions, and mold development</p></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">✅</div>
+        <div><h4>ISO 9001 Certified</h4><p>Robust quality management with full traceability</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      ISO 9001 Quality Management
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      ANSI/ESD S20.20 Compliant
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+      ISO 14644 Cleanroom Certified
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      Custom Sizes & Colors
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      Chennai, Tamil Nadu
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-title">
+      Specialized Manufacturer of<br>ESD-Safe Packaging
+    </h2>
+
+    <!-- GRID START -->
+    <div class="about-grid">
+
+      <!-- LEFT SIDE -->
+      <div class="about-text">
+        <p class="section-sub">
+          Super Form Pack is a group company of Shine Cleaning Solutions, dedicated to precision ESD packaging for the world's most sensitive industries.
+        </p>
+
+        <p>
+          We are a specialized manufacturer of ESD-safe blister trays, delivering high-precision packaging solutions for the electronics, semiconductor, automotive, and medical device industries.
+        </p>
+
+        <p>
+          Our manufacturing processes are aligned with internationally recognized standards including ISO 9001 and ANSI/ESD S20.20.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat-box"><div class="num">5+</div><div class="lbl">Product Lines</div></div>
+          <div class="stat-box"><div class="num">10⁵</div><div class="lbl">Min. Surface Resist.</div></div>
+          <div class="stat-box"><div class="num">ISO</div><div class="lbl">9001 Certified</div></div>
+          <div class="stat-box"><div class="num">100%</div><div class="lbl">Custom Capable</div></div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="about-features">
+        <div class="feat-row">
+          <div class="feat-icon">🔬</div>
+          <div>
+            <h4>Advanced Thermoforming</h4>
+            <p>State-of-the-art thermoforming and vacuum forming machines.</p>
+          </div>
+        </div>
+
+        <div class="feat-row">
+          <div class="feat-icon">🧪</div>
+          <div>
+            <h4>ESD-Controlled Zones</h4>
+            <p>Dedicated ESD-safe production zones and handling systems.</p>
+          </div>
+        </div>
+
+        <div class="feat-row">
+          <div class="feat-icon">🔍</div>
+          <div>
+            <h4>Quality Inspection Lab</h4>
+            <p>Ensuring dimensional and ESD compliance.</p>
+          </div>
+        </div>
+
+        <div class="feat-row">
+          <div class="feat-icon">🌿</div>
+          <div>
+            <h4>Clean Handling & Packaging</h4>
+            <p>Maintaining product integrity till delivery.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- GRID END -->
+
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-inner">
+    <div class="section-label">Our Products</div>
+    <h2 class="section-title">ESD Safe Tray Solutions</h2>
+    <p class="section-sub">All trays are available in custom sizes, colors, and configurations. Bulk orders welcome with consistent lead times.</p>
+    <div class="products-grid">
+
+      <!-- HIPS -->
+      <div class="prod-card">
+        <div class="prod-img prod-img-hips">
+          <div class="prod-badge">ESD Safe</div>
+          <img src="./public/hipsTray.png" alt="HIPS Tray" style="height:100%; object-fit:contain;">
+        </div>
+        <div class="prod-body">
+          <h3>HIPS ESD Safe Tray</h3>
+          <p>High Impact Polystyrene trays designed for safe handling, storage, and transportation of electronic components with anti-static properties.</p>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="sk">Material</span><span class="sv">High Impact Polystyrene</span></div>
+            <div class="spec-row"><span class="sk">Surface Resistance</span><span class="sv">10⁶ – 10⁹ Ω</span></div>
+            <div class="spec-row"><span class="sk">Color</span><span class="sv">Black / Custom</span></div>
+            <div class="spec-row"><span class="sk">Size</span><span class="sv">As per requirement</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PP -->
+      <div class="prod-card">
+        <div class="prod-img prod-img-pp">
+          <div class="prod-badge">Anti-Static</div>
+          <img src="./public/ppTray.png" alt="PP Tray" style="height:100%; object-fit:contain;">
+        </div>
+        <div class="prod-body">
+          <h3>PP Anti-Static / ESD Tray</h3>
+          <p>Polypropylene trays with anti-static properties, suitable for high-temperature environments. Available plain, partitioned, or custom molded.</p>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="sk">Material</span><span class="sv">Conductive / Anti-static PP</span></div>
+            <div class="spec-row"><span class="sk">Surface Resistivity</span><span class="sv">10⁵ to 10⁹ Ω/sq</span></div>
+            <div class="spec-row"><span class="sk">Temp. Rating</span><span class="sv">Up to 100°C</span></div>
+            <div class="spec-row"><span class="sk">Tray Type</span><span class="sv">Plain / Partitioned / Custom</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PVC -->
+      <div class="prod-card">
+        <div class="prod-img prod-img-pvc">
+          <div class="prod-badge">ESD / Non-ESD</div>
+          <img src="./public/pvcTray.png" alt="PVC Tray" style="height:100%; object-fit:contain;">
+        </div>
+        <div class="prod-body">
+          <h3>PVC Trays / ESD Trays</h3>
+          <p>Flat, lightweight PVC trays for general storage and handling. Available in ESD, Non-ESD, and food packaging variants with moisture resistance.</p>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="sk">Material</span><span class="sv">PVC</span></div>
+            <div class="spec-row"><span class="sk">Types</span><span class="sv">ESD / Non-ESD / Food</span></div>
+            <div class="spec-row"><span class="sk">Color</span><span class="sv">Transparent / Black / White</span></div>
+            <div class="spec-row"><span class="sk">Thickness</span><span class="sv">As per requirement</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- THERMOFORMED PVC -->
+      <div class="prod-card">
+        <div class="prod-img prod-img-thermo">
+          <div class="prod-badge">Custom Molded</div>
+          <img src="./public/thermoformedTray.png" alt="Thermoformed Tray" style="height:100%; object-fit:contain;">
+        </div>
+        <div class="prod-body">
+          <h3>Thermoformed PVC Tray</h3>
+          <p>Custom-shaped trays made using a precision molding process, providing product-specific fit, protection, and positioning during storage and transit.</p>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="sk">Process</span><span class="sv">Thermoforming / Vacuum Forming</span></div>
+            <div class="spec-row"><span class="sk">Material</span><span class="sv">PVC</span></div>
+            <div class="spec-row"><span class="sk">Size</span><span class="sv">As per product</span></div>
+            <div class="spec-row"><span class="sk">Finish</span><span class="sv">Smooth / Textured</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PET -->
+      <div class="prod-card">
+        <div class="prod-img prod-img-pet">
+          <div class="prod-badge">Eco-Friendly</div>
+          <img src="./public/petTray.png" alt="PET Tray" style="height:100%; object-fit:contain;">
+        </div>
+        <div class="prod-body">
+          <h3>PET Tray</h3>
+          <p>High-clarity, durable PET trays for industrial and commercial packaging. Made from RPET/PET/PS with strong finish and product protection.</p>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="sk">Material</span><span class="sv">RPET / PET / PS</span></div>
+            <div class="spec-row"><span class="sk">Color</span><span class="sv">White / Transparent</span></div>
+            <div class="spec-row"><span class="sk">Usage</span><span class="sv">Electronics / Cosmetics / Industrial</span></div>
+            <div class="spec-row"><span class="sk">Feature</span><span class="sv">Recyclable, Eco-Friendly</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CUSTOM -->
+      <div class="prod-card" style="border: 2px dashed #c8d6e8;">
+        <div class="prod-img" style="background: linear-gradient(135deg, #f4f7fb 0%, #e8f0fb 100%); flex-direction: column; gap: 12px;">
+          <div style="font-size: 2.5rem;">⚙️</div>
+          <div style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--navy);font-size:1rem;">Custom Requirements</div>
+        </div>
+        <div class="prod-body">
+          <h3>Custom / OEM Trays</h3>
+          <p>Have specific requirements? We offer fully custom tray design, tooling, and production across all materials and sizes for your application.</p>
+          <div class="prod-specs">
+            <div class="spec-row"><span class="sk">Materials</span><span class="sv">HIPS / PP / PVC / PET</span></div>
+            <div class="spec-row"><span class="sk">Tooling</span><span class="sv">In-house mold development</span></div>
+            <div class="spec-row"><span class="sk">Industries</span><span class="sv">Electronics / Auto / Medical</span></div>
+            <div class="spec-row"><span class="sk">MOQ</span><span class="sv">Contact for details</span></div>
+          </div>
+          <a href="#contact" class="btn-primary" style="display:block;text-align:center;margin-top:16px;font-size:0.88rem;padding:10px 0;">Enquire Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities">
+  <div class="section-inner">
+    <div class="section-label">Our Infrastructure</div>
+    <h2 class="section-title">World-Class Manufacturing Facilities</h2>
+    <p class="section-sub">Our Chennai facility is equipped with advanced technology and controlled environments to deliver precision ESD packaging at scale.</p>
+    <div class="fac-grid">
+      <div class="fac-card">
+        <div class="fac-icon">🏭</div>
+        <h3>Advanced Manufacturing</h3>
+        <ul>
+          <li>State-of-the-art thermoforming and vacuum forming machines</li>
+          <li>In-house tooling and mold development unit</li>
+          <li>Dedicated ESD-controlled production zones</li>
+          <li>High efficiency, reduced lead times</li>
+        </ul>
+      </div>
+      <div class="fac-card">
+        <div class="fac-icon">🧹</div>
+        <h3>Cleanroom Environment</h3>
+        <ul>
+          <li>ISO 14644 compliant controlled cleanroom</li>
+          <li>HEPA-filtered air circulation system</li>
+          <li>Positive air pressure maintenance</li>
+          <li>Regular particle count and humidity monitoring</li>
+        </ul>
+      </div>
+      <div class="fac-card">
+        <div class="fac-icon">🔬</div>
+        <h3>Quality Laboratory</h3>
+        <ul>
+          <li>Advanced quality inspection and testing lab</li>
+          <li>ESD surface resistance measurement</li>
+          <li>Dimensional accuracy verification</li>
+          <li>Full batch traceability and reporting</li>
+        </ul>
+      </div>
+      <div class="fac-card">
+        <div class="fac-icon">⚡</div>
+        <h3>ESD Safety Systems</h3>
+        <ul>
+          <li>ESD-safe flooring throughout facility</li>
+          <li>ESD workstations and handling equipment</li>
+          <li>Grounding and bonding systems</li>
+          <li>ANSI/ESD S20.20 compliant processes</li>
+        </ul>
+      </div>
+      <div class="fac-card">
+        <div class="fac-icon">👔</div>
+        <h3>Personnel Protocols</h3>
+        <ul>
+          <li>Strict gowning and entry procedures</li>
+          <li>ESD wrist strap and footwear checks</li>
+          <li>Regular staff training on ESD handling</li>
+          <li>Visitor management and access control</li>
+        </ul>
+      </div>
+      <div class="fac-card">
+        <div class="fac-icon">📦</div>
+        <h3>Clean Packaging Area</h3>
+        <ul>
+          <li>Dedicated clean packaging zones</li>
+          <li>Anti-static packaging materials used</li>
+          <li>Controlled humidity and temperature</li>
+          <li>Inspection before final dispatch</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section id="quality">
+  <div class="section-inner">
+    <div class="section-label">Standards & Compliance</div>
+    <h2 class="section-title">Quality You Can Trust</h2>
+    <p class="section-sub">Every tray we produce undergoes rigorous quality checks under internationally recognized standards.</p>
+    <div class="quality-grid">
+      <div class="quality-badges">
+        <div class="q-badge">
+          <div class="qb-icon">🏅</div>
+          <h4>ISO 9001</h4>
+          <p>Quality Management System — process control, traceability, and continuous improvement</p>
+        </div>
+        <div class="q-badge">
+          <div class="qb-icon">⚡</div>
+          <h4>ANSI/ESD S20.20</h4>
+          <p>Electrostatic discharge protection for static-sensitive device handling</p>
+        </div>
+        <div class="q-badge">
+          <div class="qb-icon">🌡️</div>
+          <h4>ISO 14644</h4>
+          <p>Cleanroom and controlled environment standards for airborne particle control</p>
+        </div>
+        <div class="q-badge">
+          <div class="qb-icon">♻️</div>
+          <h4>Eco-Compliant</h4>
+          <p>Recyclable materials and sustainable manufacturing practices across product lines</p>
+        </div>
+      </div>
+      <div class="quality-points">
+        <div class="qp"><div class="qp-num">01</div><div><h4>Process Control & Traceability</h4><p>Complete batch-level traceability from raw material to finished product, ensuring full accountability and quality audit trails.</p></div></div>
+        <div class="qp"><div class="qp-num">02</div><div><h4>In-Process Inspection</h4><p>Multi-stage quality checks during production, including dimensional, visual, and ESD resistance testing at every critical stage.</p></div></div>
+        <div class="qp"><div class="qp-num">03</div><div><h4>Final Outgoing Inspection</h4><p>100% inspection of outgoing shipments to verify that all trays meet customer specifications and regulatory requirements.</p></div></div>
+        <div class="qp"><div class="qp-num">04</div><div><h4>Continuous Improvement</h4><p>Data-driven CAPA (Corrective and Preventive Action) systems drive ongoing process improvements and defect reduction.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title" style="color:#fff;">Let's Build the Right Solution</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="ci-card">
+          <div class="ci-icon">🏢</div>
+          <div>
+            <h4>Head Office</h4>
+            <p>Plot No 6, Raja's Garden, Phase-II<br>Noombal, Chennai – 600 077<br>Tamil Nadu, India</p>
+          </div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">🏭</div>
+          <div>
+            <h4>Manufacturing Unit</h4>
+            <p>No – 54/1, Sri Devi Nagar<br>Goprasanallur, Kattupakam<br>Chennai – 600056, Tamil Nadu</p>
+          </div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">📞</div>
+          <div>
+            <h4>Customer Care</h4>
+            <a href="tel:+919791119488">+91 97911 19488</a>
+            <a href="tel:+917397328989">+91 73973 28989</a>
+            <a href="tel:+919962119592">+91 99621 19592</a>
+          </div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:ccare@shinecleaner.in">ccare@shinecleaner.in</a>
+          </div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">💬</div>
+          <div>
+            <h4>WhatsApp Enquiries</h4>
+            <a href="https://wa.me/919791119488" target="_blank">+91 97911 19488 — Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send an Enquiry</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
+          <div class="form-group"><label>Company</label><input type="text" placeholder="Company name"/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
+        </div>
+        <div class="form-group">
+          <label>Product Interest</label>
+          <select>
+            <option value="">Select a product…</option>
+            <option>HIPS ESD Safe Tray</option>
+            <option>PP Anti-Static / ESD Tray</option>
+            <option>PVC Tray / ESD Tray</option>
+            <option>Thermoformed PVC Tray</option>
+            <option>PET Tray</option>
+            <option>Custom / OEM Requirement</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Describe your requirements — material, size, quantity, application…"></textarea></div>
+        <button class="submit-btn" onclick="alert('Thank you for your enquiry! We will contact you shortly.')">Send Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p>© 2024 Super Form Pack — A Group of Shine Cleaning Solutions. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:ccare@shinecleaner.in">ccare@shinecleaner.in</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <a href="https://wa.me/919791119488" target="_blank" class="wa-btn" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+</body>
+</html>
